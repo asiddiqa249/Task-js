@@ -137,46 +137,46 @@ do {
 
 //-----------prgm solving-----------
 //--square---
-// l = +prompt("len");
-// b = +prompt("breadth");
-// if (l == b) {
-//     console.log("square");
-// } else {
-//     console.log("not a square");
-// }
+l = +prompt("len");
+b = +prompt("breadth");
+if (l == b) {
+    console.log("square");
+} else {
+    console.log("not a square");
+}
 
 // --payment--
-// a = +prompt("no. of 2's");
-// b = +prompt("no.of 5's");
-// c = +prompt("no.of 10's")
-// tot = (a * 2) + (b * 5) + (c * 10);
-// bill = +prompt("enter bill");
-// if (tot == bill) {
-//     alert("paid");
-// } else if (tot < bill) {
-//     alert(bill - tot);
-// } else {
-//     alert(tot - bill);
-// }
+a = +prompt("no. of 2's");
+b = +prompt("no.of 5's");
+c = +prompt("no.of 10's")
+tot = (a * 2) + (b * 5) + (c * 10);
+bill = +prompt("enter bill");
+if (tot == bill) {
+    alert("paid");
+} else if (tot < bill) {
+    alert(bill - tot);
+} else {
+    alert(tot - bill);
+}
 
 // --Ap--
-// let a = +prompt("a");
-// let b = +prompt("b");
-// let c = +prompt("c");
-// let d = +prompt("d");
-// if ((a - b) == (b - c) && (b-c) == (c - d)){
-//     console.log("ap");
-// } else {
-//     console.log("not ap");
-// }
+let a = +prompt("a");
+let b = +prompt("b");
+let c = +prompt("c");
+let d = +prompt("d");
+if ((a - b) == (b - c) && (b-c) == (c - d)){
+    console.log("ap");
+} else {
+    console.log("not ap");
+}
 
 // ---modulus----
-// let a = +prompt("a");
-// let b = +prompt("b");
-// let c = +prompt("c");
-// if ((a % c == 0) && (b % c == 0)) {
-//     console.log("true");
-// } else {
-//     console.log("false");
-// }
+let a = +prompt("a");
+let b = +prompt("b");
+let c = +prompt("c");
+if ((a % c == 0) && (b % c == 0)) {
+    console.log("true");
+} else {
+    console.log("false");
+}
 
