@@ -153,11 +153,13 @@
 // bill = +prompt("enter bill");
 // if (tot == bill) {
 //     alert("paid");
-// } else if (tot < bill) {
-//     alert(bill - tot);
-// } else {
-//     alert(tot - bill);
-// }
+// } else if (tot > bill) {
+//     alert(tot- bill);
+// } else{
+//     alert(bill-tot);
+//}
+//
+//
 
 // --Ap--
 // let a = +prompt("a");
