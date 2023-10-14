@@ -227,3 +227,39 @@
 // }
 // mnth(12);
 
+// ****************count of vowels*******************
+// var a = prompt("enter string");
+// c = 0;
+// for (i = 0; i < a.length; i++){
+//     if (a[i] == "a" || a[i] == "e" || a[i] == "i" || a[i] == "o" || a[i] == "u") {
+//         c++;
+//     }
+// }
+// console.log(c);
+
+//***************count of consonants*****************
+// var a = prompt("enter string");
+// c = 0;
+// for (i = 0; i < a.length; i++){
+//     if (a[i] !== "a" && a[i] !== "e" && a[i] !== "i" && a[i] !== "o" && a[i] !== "u" && a[i] !== "A" && a[i] !== "E" && a[i] !== "I" && a[i] !== "O" && a[i] !== "U") {
+//         c++;
+//     }
+// }
+// console.log(c);
+
+// *****************palindrome***********************
+// function palindrome(num) {
+//     let rev = 0;
+//     temp = num;
+//     while (temp>0){
+//         last = temp % 10;
+//         rev = rev * 10 + last;
+//         temp = Math.floor(temp / 10);
+//     }
+//     if (rev == num) {
+//         console.log("palindrome");
+//     } else {
+//         console.log("not a palindrome");
+//     }
+// }
+// console.log(palindrome(""));
