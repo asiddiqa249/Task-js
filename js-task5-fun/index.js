@@ -171,15 +171,21 @@
 // }
 // range()
 
-// //------------------prgm-15--------------------------
+// ************************reverse*********************
 // function rev(a) {
-//     var x = "ayesha";
+//     var x="ayesha"
 //     for (a = x.length - 1; a >= 0; a--) {
 //         console.log(x[a]);
 //     }
 //     return a;
 // }
 // rev()
+
+// var a = prompt("enter a");
+// for (i = a.length - 1; i >= 0; i--){
+//     console.log(a[i]);
+// }
+
 
 // //--------------------prgm-16--------------------------
 // function mnth(x) {
@@ -262,4 +268,33 @@
 //         console.log("not a palindrome");
 //     }
 // }
-// console.log(palindrome(""));
+// console.log(palindrome("121"));
+
+// **************fibanocci***********************
+// function fibanocci(num) {
+//     var n1=0, n2=1, nexterm;
+//     for (i = 0; i <= num; i++){
+//         console.log(n1);
+//         nexterm = n1 + n2;
+//         n1 = n2;
+//         n2 = nexterm;
+//     }
+// }
+// console.log(fibanocci(5));
+
+//*************armstrong********************
+// function armstrong(num) {
+//     let sum = 0;
+//     temp = num;
+//     while (temp>0){
+//         last = temp % 10;
+//         sum += last*last*last;
+//         temp = Math.floor(temp / 10);
+//     }
+//     if (sum == num) {
+//         console.log("armstrong");
+//     } else {
+//         console.log("not a armstrong");
+//     }
+// }
+// console.log(armstrong(153));
