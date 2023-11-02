@@ -40,8 +40,8 @@
 // }
 
 // Array pop()
-// arr = ["ayesha", "siddiqa", "sadiya", "umar"];
-// console.log(arr.pop());
+arr = ["ayesha", "siddiqa", "sadiya", "umar"];
+console.log(arr.pop());
 // console.log(arr.push("kavya"));
 // console.log(arr.join("@"));
 // b=arr.shift();

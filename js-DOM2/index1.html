@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM task2</title>
+</head>
+<body></body>
+<script>
+    let h1create=document.createElement("h1");
+    //console.log(h1create);
+    h1create.innerText="RESUME";
+    let bdy=document.body;
+    //console.log(bdy);
+   // bdy.insertAdjacentElement("afterend",h1create)
+   bdy.append(h1create);
+   h1create.style.textAlign="center";
+   let image=document.createElement("img");
+   //console.log(image)
+   image.setAttribute("src","./photo.jpg")
+   //console.log(image)
+   image.style.width="100px";
+   image.style.float="right";
+   bdy.appendChild(image)
+   let name=document.createElement("h3");
+   name.innerText="Ayesha Siddiqa";
+   bdy.append(name);
+   let mail=document.createElement("p");
+   mail.innerText="asiddiqa249@gmail.com";
+   bdy.append(mail);
+   let num=document.createElement("p");
+   num.innerText="9390553816";
+   bdy.append(num);
+   let objhead=document.createElement("h2");
+   objhead.innerText="Career Objectives";
+   bdy.appendChild(objhead);
+   let obj=document.createElement("p");
+   obj.innerText="To obtain a challenging position as a Software Engineer in a leading multi-national organization where I can use my qualification and skills to prove my abilities.";
+   bdy.appendChild(obj);
+   let qual=document.createElement("h2");
+   qual.innerText="Educational Qualification";
+   bdy.appendChild(qual);
+
+   let list=document.createElement("ul");
+   
+    let listitem=document.createElement("li")
+    listitem.innerText="2019-23 - B. Tech in Ace Engineering college present with 73%";
+    let listitem1=document.createElement("li")
+    listitem1.innerText="2017-19 - Intermediate from Ekashila junior college with 94%";
+    let listitem2=document.createElement("li")
+    listitem2.innerText="2016-17 - SSC from Ekashila e-Techno School with 93%";
+    list.appendChild(listitem);
+    list.appendChild(listitem1);
+    list.appendChild(listitem2);
+   
+   bdy.appendChild(list);
+   let tech=document.createElement("h2");
+   tech.innerText="Technical Skills";
+   bdy.appendChild(tech);
+   let prgm=document.createElement("p");
+   prgm.innerText="Programming languages : c, python, HTML, CSS, JavaScript";
+   bdy.appendChild(prgm);
+   let db=document.createElement("p");
+   db.innerText="Databases : SQL";
+   bdy.appendChild(db);
+   let proj=document.createElement("h2");
+   proj.innerText="Projects";
+   bdy.appendChild(proj);
+   let proj1=document.createElement("p");
+   proj1.innerText="1. BUS RESERVATION SYSTEM : Bus Reservation System provides users to book and purchase tickets online. Which is more comfortable other than offline purchasing.";
+   bdy.appendChild(proj1);
+   let proj2=document.createElement("p");
+   proj2.innerText="2. SCIENTIFIC CAREER COUNSELLING SOFTWARE : Students are guided with a best course according to their interest this means that the student will be in a position to select right subject with the help of this platform.";
+   bdy.appendChild(proj2);
+   let proj3=document.createElement("p");
+   proj3.innerText="3. A SURVEY ON PULMONARY FIBROSIS PROGRESSION : The goal of this project is to determine the severity of pulmonary fibrosis, a lung scarring condition that is frequently challenging to predict, even by medical professionals.";
+   bdy.appendChild(proj3);
+   let declare=document.createElement("h2");
+   declare.innerText="Declaration";
+   bdy.appendChild(declare);
+   let declaretxt=document.createElement("p");
+   declaretxt.innerText="I hereby declare that the contents of my resume are accurate to the best of my knowledge and verify their authenticity.";
+   bdy.appendChild(declaretxt)
+   let place=document.createElement("p");
+   place.innerText="place : Lohitha";
+   bdy.appendChild(place);
+   let date=document.createElement("p");
+   date.innerText="Date : 30-10-2023";
+   bdy.appendChild(date);
+
+   
+</script>
+</html>
