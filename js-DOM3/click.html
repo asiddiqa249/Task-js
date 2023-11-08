@@ -293,12 +293,7 @@
     btn4.innerText = "ALL";
     bdy.appendChild(btn4);
 
-    let btn = document.createElement("button");
-    btn.innerText = "Mens";
-    bdy.appendChild(btn);
-    btn.addEventListener("click",()=>{
-        shop("men's clothing");
-    })
+    
 
     let btn1 = document.createElement("button");
     btn1.innerText = "womens";
@@ -308,10 +303,17 @@
     btn2.innerText = "Electronics";
     bdy.appendChild(btn2);
 
+    let btn = document.createElement("button");
+    btn.innerText = "Mens";
+    bdy.appendChild(btn);
+    btn.addEventListener("click",()=>{
+        shop("men's clothing");
+    });
+
     function shop(sh) {
       refresh();
       let re=arr.filter((value, index, array) => {
-        return value.category == sh;
+        return value.category === sh;
       });
       let ulgetting = document.querySelectorAll("ul");
       for (let val of re) {

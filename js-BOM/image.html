@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(205, 171, 238);
+        }
+        p{
+            border: 1px solid black;
+        }
+        button{
+            padding: 1%;
+            width: 70px;
+            border-radius: 5px;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <button>Back</button>
+    <div></div>
+</body>
+<script>  
+    let divget=document.getElementsByTagName("div");
+    let btn=document.getElementsByTagName("button");
+    //console.log(btn);
+    btn[0].addEventListener("click",()=>{
+        window.history.back();
+    })
+    let val=JSON.parse(localStorage.getItem("see more"));
+    console.log(val);
+    let span1get=document.createElement("span");
+    let img=document.createElement("img");
+    img.style.width="200px";
+    img.style.paddingTop="3%"
+    img.setAttribute("src",val.image);
+    
+    span1get.appendChild(img)
+    divget[0].appendChild(span1get)
+
+</script>
+</html>
