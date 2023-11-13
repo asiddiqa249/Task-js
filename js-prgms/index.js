@@ -68,29 +68,70 @@
 //prgm-9---------------------
 
 // var a;
-// a
-// console.log(null)
+// a=null
+// console.log(a)
 
-// Patterns
-let rows = 5;
+// Multiplication of a number----------------------
+// var num = prompt("enter num");
+// for (let i = 1; i <= 10; i++){
+//   var res = num * 1;
+//   console.log(num +"*"+ i + "=" +res);
+// }
 
-// pattern variable carries the final pattern in string format
-let pattern = " ";
+// simple array sum
+// let num = 6;
+// let arr = [1, 2, 3, 4, 10, 11]
+// c = 0;
+// for (let i = 0; i < arr.length; i++){
+//     c+=arr[i];
+// }
+// console.log(c);
 
-// outer loop runs for `rows` no. of times
-for (let n = 1; n <= rows; n++) {
-  for (let num = 1; num <= 5; num++) {
-    // print star only if it is the boundary location
-    if (n == 1 || n == rows) pattern += "*";
-    else {
-      if (num == 1 || num == 5) {
-        pattern += "*";
-      } else {
-        pattern += " ";
-      }
+// function simplearrsum(n, arr) {
+//     c = 0;
+//     for (let i = 0; i < arr.length; i++){
+//         c+=arr[i]
+//     }
+//     return console.log(c);
+// }
+// simplearrsum(6, [1,2,3,4,10,11])
+
+// function sumoftwo(a, b) {
+//   return console.log(a + b);
+// }
+// sumoftwo(6, 7);
+
+// function power(v, i) {
+//   return console.log(v * i);
+// }
+// power(6, 5);
+
+// function vowels(str) {
+//     c=0
+//     for (var i = 0; i < str.length; i++){
+//         if (str[i]=="a" || str[i] == "e" || str[i] == "i" || str[i] =="o" || str[i] == "u") {
+//             c++;
+//         }
+//     }
+//     return console.log(c);
+// }
+// vowels("beautiful")
+
+// let n = 5;
+// let c = 0;
+// for (let i = 1; i <=n; i++){
+//     c = i * 2;
+//     console.log(c);
+// }
+
+function candle(n, height) {
+    var maxheight = Math.max(height);
+    var c = 0;
+    for (var i = 0; i < n; i++){
+        if (height[i] == maxheight) {
+            c++;
+        }
     }
-  }
-  pattern += "\n";
+    return console.log(c);
 }
-console.log(pattern);
-
+candle(4, [3,2,1,3])
