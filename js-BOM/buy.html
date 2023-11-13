@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body{
-            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230630/pngtree-d-rendered-festive-scene-with-gifts-and-bags-in-an-abstract-image_3691152.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        h1{
-            text-align: center;
-        }
+      body {
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230630/pngtree-d-rendered-festive-scene-with-gifts-and-bags-in-an-abstract-image_3691152.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      h1 {
+        text-align: center;
+      }
+      #hme{
+        background-color: antiquewhite;
+        padding: 1%;
+        font-size: large;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <center><img src="https://i.gifer.com/7efs.gif" alt=""></center> -->
     <h1>your order is placed sucussefully...🎁💥</h1>
-</body>
+    <center><button id="hme">Continue Shopping...</button></center>
+    <script>
+      let btn = document.getElementById("hme");
+      btn.addEventListener("click", () => {
+        window.location.assign("./Home.html");
+      });
+    </script>
+  </body>
 </html>
