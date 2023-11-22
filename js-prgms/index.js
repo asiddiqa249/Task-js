@@ -16,7 +16,8 @@
 
 //prgm-4----------------------
 // var e = +prompt("enter e");
-// console.log(e*365+" days");
+// console.log(e * 365.25 + " days");
+
 //prgm-4---------------------
 
 // prgm-5---------------------
@@ -66,6 +67,8 @@
 // }
 // res = a('pravs')
 // console.log(res);
+// console.log(a("pravs"));
+
 //prgm-9---------------------
 
 //prgm-10-----------------------
@@ -90,6 +93,17 @@
 //}
 //let res = Sort(["ddd", "cc", "eeee", "a"]);
 //console.log(res)
+
+// let arr = ["ddd", "cc", "eeee", "a"];
+// for (i = 0; i < arr.length; i++) {
+//   for (j = i + 1; j < arr.length; j++) {
+//     if (arr[i] < arr[j]) {
+//       [arr[i], arr[j]] = [arr[j], arr[i]];
+//     }
+//   }
+// }
+// console.log(arr);
+
 //prgm-11------------------------------
 
 //prgm-12----------------------------------------
@@ -97,7 +111,7 @@
 //Example:
 //findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 2]
 
-//function largest(arr) {
+// function largest(arr) {
 //    let res = [];
 //    for (let i = 0; i < arr.length; i++){
 //        let max = arr[i][0];
@@ -109,9 +123,30 @@
 //        res.push(max)
 //    }
 //    return res;
-//}
-//let x=largest([[1, 3, 9], [22, 4, 9], [5, 6, 3]] )
-//console.log(x)
+// }
+// let x = largest([
+//   [4, 2, 7, 1],
+//   [20, 70, 40, 90],
+//   [1, 2, 0],
+// ]);
+// console.log(x)
+
+// let arr = [
+//   [4, 2, 7, 1],
+//   [20, 70, 40, 90],
+//   [1, 2, 0],
+// ];
+// let res = [];
+// for (i = 0; i < arr.length; i++) {
+//   let max = arr[i][0];
+//   for (j = 1; j < arr[i].length; j++) {
+//     if (arr[i][j] > max) {
+//       max = arr[i][j];
+//     }
+//   }
+//   res.push(max);
+// }
+// console.log(res);
 
 //prgm-12-----------------------------------
 
@@ -124,8 +159,20 @@
 //    let s = arr.sort((a, b) => a - b);
 //    return s;
 //}
-//let x = sort([3, 5, 6, 8, 4])
+// let x = sort([3, 5, 6, 8, 4])
 //console.log(x[x.length-2])
+
+// function sort(arr) {
+//     for (i = 0; i < arr.length; i++){
+//         for (j = i + 1; j < arr.length; j++){
+//             if (arr[i] > arr[j]) {
+//                 [arr[i],arr[j]]=[arr[j],arr[i]]
+//             }
+//         }
+//     }
+//     return (arr[arr.length - 2]);
+// }
+// console.log(sort([3, 5, 6, 8, 4]));
 
 //prgm-13-----------------------------------------
 
@@ -163,7 +210,7 @@
 //Example:
 //findSingleNumber([2, 2, 2, 3, 4, 4, 4]) ➞ 3
 
-// let a = [2, 2, 2, 3, 4, 4, 4,6,7];
+// let a = [2, 2, 2, 3, 4, 4, 4,7];
 
 // for (i = 0; i < a.length; i++) {
 //   let b = 0;
@@ -177,6 +224,20 @@
 //   }
 // }
 
+// function unique(a) {
+//     for (i = 0; i < a.length; i++){
+//         let b = 0;
+//         for (j = 0; j < a.length; j++){
+//             if (a[i] == a[j]) {
+//                 b++;
+//             }
+//         }
+//         if (b == 1) {
+//             return a[i];
+//         }
+//     }
+// }
+// console.log(unique([2, 2, 2, 3, 4, 4, 4, 7]));
 //prgm-15------------------------------------------
 
 //prgm-16-----------------------------------------
@@ -192,6 +253,15 @@
 //   }
 // }console.log(c);
 
+// function char(a, str) {
+//     let c = 0;
+//     for (i = 0; i < str.length; i++){
+//         if (a == str[i]) {
+//             c++;
+//         }
+//     } return c;
+// }
+// console.log(char("c","chamber of secrets"));
 //prgm-16----------------------------------------
 
 //prgm-17--------------------------------------
@@ -226,6 +296,17 @@
 // }
 // console.log(b);
 
+// function rev(str) {
+//     let a = "";
+//     for (i = 0; i < str.length; i++){
+//         if (str[i] == str[i].toUpperCase()) {
+//             a += str[i].toLowerCase();
+//         } else {
+//             a+=str[i].toUpperCase()
+//         }
+//     }return a
+// }
+// console.log(rev("Happy Birthday"));
 //prgm-18------------------------------------------
 
 //prgm-19----------------------------------------
@@ -236,8 +317,10 @@
 // let c = 0;
 // for (let i = 1; i <=n; i++){
 //     c = i * 2;
-//     console.log(c);
+//     console.log(`${i} * 2 = ${c}`);
 // }
+
+
 
 //prgm-19-----------------------------------------
 
@@ -393,6 +476,21 @@
 
 //prgm-27--------------------------------------------
 // Program to find LCM of two numbers using while loop
+// let a = 5;
+// let b = 10;
+// let c;
+// if (a > b) {
+//     c = a;
+// } else {
+//     c = b;
+// }
+// let i = c;
+// while (i > 0) {
+//     if (i % a == 0 && i % b == 0) {
+//         break;
+//     } i++;
+// }
+// console.log(i);
 
 //prgm-27-------------------------------------------
 
@@ -400,6 +498,13 @@
 // Program to Display Characters from A to Z Using Loop with count.
 
 // 			Output: A1 B2 C3 D4 E5 F6 ……. Z26
+// let a=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
+//   "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+//   let b=[]
+// for (let i = 0; i < a.length; i++){
+//   b.push(`${a[i]}${i+1} `);
+// }
+// console.log(b);
 
 //prgm-28-------------------------------------------
 
@@ -408,7 +513,14 @@
 
 // 			Input:  n=5(length of array), arr= [5,3,1,4]
 // 			Output: 2 is missing
+// let n = 5;
+// let arr = [5, 3, 1, 4]
+// let a = arr.sort();
+// console.log(a);
+// for (i = 0; i <= n; i++){
 
+// }
+// console.log(a.length);
 //prgm-29-------------------------------------------
 
 //prgm-30-------------------------------------------
@@ -462,7 +574,7 @@
 
 //prgm-32----------------------------------------
 
-//prgm-33-----------------------------------------
+//prgm-33------------------------------------------------
 // Count occurrence of number:
 
 // 			Input: [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10] , no find=7
@@ -478,7 +590,280 @@
 //   }
 // }console.log(`${a} present ${c} times`);
 
-//prgm-33----------------------------------------
+//prgm-33----------------------------------------------
+
+//********************(Medium Level)****************************//
+
+//prgm-1----------------------------------------
+// Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+
+// Examples :
+
+// toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+// let obj = { a: 1, b: 2 };
+// let key = Object.keys(obj);
+// console.log(arr);
+
+// let val = Object.values(obj)
+// console.log(obj);
+
+// let arr = Object.entries(obj)
+// console.log(obj);
+//prgm-1----------------------------------------
+
+
+//prgm-2---------------------------------------------------
+// Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+// Examples :
+// arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+
+// let arrOfMul = (7, 5);
+
+// function arrOfMul(n, l) {
+//     let b = [];
+//     for (let i = 1; i <= l; i++){
+//         let res = i * n;
+//         // console.log(res);
+//         b.push(res)
+//     }
+//     return b;
+// }
+// console.log(arrOfMul(7, 5));
+
+// prgm-2---------------------------------------------------
+
+
+//prgm-3---------------------------------------------------------
+// Create the function that takes an array with objects and returns the sum of people's budgets.
+// Examples :
+// getBudgets([
+//   { name: "John", age: 21, budget: 23000 },
+//   { name: "Steve",  age: 32, budget: 40000 },
+//   { name: "Martin",  age: 16, budget: 2700 }
+// ]) ➞ 65700
+
+// let arrOfObj = [
+//   { name: "John", age: 21, budget: 23000 },
+//   { name: "Steve", age: 32, budget: 40000 },
+//   { name: "Martin", age: 16, budget: 2700 },
+// ];
+// sum = 0;
+// for (let i = 0; i < arrOfObj.length; i++){
+//     sum+=arrOfObj[i].budget
+// }
+// console.log(sum);
+
+// function arr(obj,sum=0) {
+//     for (let i = 0; i < obj.length; i++){
+//         sum += obj[i].budget;
+//     }
+//     return sum;
+// }
+// let a=arr([
+//   { name: "John", age: 21, budget: 29000 },
+//   { name: "Steve", age: 32, budget: 32000 },
+//   { name: "Martin", age: 16, budget: 1600 },
+// ]);
+// console.log(a);
+//prgm-3---------------------------------------------------------
+
+
+//prgm-4------------------------------------------------
+// Create a function that takes an array of objects like { name: "John", notes: [3, 5, 4]} and returns an array of objects like { name: "John", avgNote: 4 }. If a student has no notes (an empty array) then let's assume avgNote: 0.
+// 	Example :
+// [
+//   { name: "John", notes: [3, 5, 4]}
+// ] ➞ [
+//   { name: "John", avgNote: 4 }
+// ]
+
+// function arr(array) {
+//   let sum = 0;
+//   for (let i = 0; i < array[0].notes.length; i++) {
+//     sum += array[0].notes[i];
+//   }
+//   return `{ Name: ${array[0].name}, avgnote: ${sum / array[0].notes.length} }`;
+// }
+// console.log(arr([{ name: "John", notes: [3, 5, 4] }]));
+//prgm-4------------------------------------------------
+
+
+//prgm-5-----------------------------------------------------------
+// Create a function that moves all capital letters to the front of a word.
+// 	Examples :capToFront("hApPy") ➞ "APhpy"
+
+// function rev(str) {
+//     let a=""
+//     for (i = 0; i < str.length; i++){
+//         if (str[i] == str[i].toUpperCase()) {
+//             a += str[i];
+//         }
+//     }
+//     for (i = 0; i < str.length; i++) {
+//       if (str[i] == str[i].toLowerCase()) {
+//         a += str[i];
+//       }
+//     }
+//     return a;
+// }
+// console.log(rev("hApPy"));
+// console.log(rev("moveMENT"));
+// console.log(rev("shOrtCAKE"));
+//prgm-5-----------------------------------------------------------
+
+//prgm-6----------------------------------------------
+// Count each occurrence of number(can not use predefined function).
+// Input: [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10] , no find=7
+// 			Output: 1 present 2 times.
+// 				   2 present 1 times.
+// 				   3 present 2 times.
+
+// function count(arr, num) {
+//     let c = 0;
+//     for (let i = 0; i < arr.length; i++){
+//         if (arr[i] == num) {
+//             c++;
+//         }
+//     } return `${num} present ${c} times`;
+// } console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 1));
+// console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 2));
+// console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 3));
+// console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 5));
+//prgm-6-----------------------------------------------------------
+
+
+//prgm-7--------------------------------------------------
+// Write a function that accepts an array of strings. Return the longest string(can not use predefined function).
+// Input: [‘nik’, ’mikhil’, ’Cow’,’Elephant’] Output: Elephant
+
+// function len(arr) {
+//     let str = arr[0];
+//     for (i = 0; i < arr.length; i++){
+//         if (arr[i].length > str.length) {
+//             str = arr[i]
+//         }
+
+//     } return str;
+// }
+// console.log(len(["nik", "mikhil", "Cow", "Elephant"]));
+//prgm-7-----------------------------------------------------------
+
+
+//prgm-8------------------------------------------------------
+// Most Commonly Used two Character in String(can not use predefined function)
+// Input: "Hii i am ram"
+// Output: i, a
+
+// let str = "hii i am ram";
+// let str1 = "";
+
+// for (i = 0; i < str.length; i++) {
+//   let c = 0;
+//   for (j = i+1; j < str.length; j++) {
+//     if (str[i] == str[j]) {
+//       c++;
+//       if (c == 1) {
+//         str1 += str[j];
+//       }
+//     }
+    //   }
+//     if (str[i] == "i" || str[i] == "a") {
+//         str1 += str[i];
+//     }
+// }
+// let x=""
+// for (i = 0; i < str1.length; i++){
+//     if (!x.includes(str1[i])) {
+//         x+=str1[i]
+//     }
+// }
+// console.log(x);
+//prgm-8-----------------------------------------------------------
+
+
+//prgm-9-------------------------------------------------------
+// Write Program to remove duplicate elements in an array and sort it in descending order(can not use predefined function).
+// 			Input: [5,3,5,2,1,1,7,3,5,6]
+// 			Output: [7,6,5,32,1]
+
+// let arr = [5, 3, 5, 2, 1, 1, 7, 3, 5, 6];
+
+// for (i = 0; i < arr.length; i++) {
+//   for (j = i + 1; j < arr.length; j++) {
+//     if (arr[i] < arr[j]) {
+//       [arr[i], arr[j]] = [arr[j], arr[i]];
+//     }
+//   }
+// }
+// let arr1 = [];
+// for (let i = 0; i < arr.length; i++) {
+//   if (!arr1.includes(arr[i])) {
+//     arr1.push(arr[i]);
+//   }
+// }
+// console.log(arr1);
+
+//prgm-10-----------------------------------------------------------
+// Write a Program to Remove brackets from an algebraic expression(can not use predefined function).
+// Input: a + b-(9+c)=3 Output: a + b- 9+c=3
+
+// let inp = "a + b - (9 + c)=3";
+// for (let i = 0; i < inp.length; i++){
+    
+// }
+
+//object------------------------------------------------------------
+// const name = "sai"
+// const id="3"
+// console.log({name,id});
+//prgm-10-----------------------------------------------------------
+
+//prgm-11-----------------------------------------------------------
+// Write Program to remove duplicate elements in an array and sort it in Accending order(can not use predefined function).
+// Input: [Z, A, P, C, A, Z , K, N, C] Output: [A, C, K,N, P, Z]
+// let inp = ["Z", "A", "P", "C", "A", "Z", "K","N","C"];
+// let inp1=[]
+// for (i = 0; i < inp.length; i++){
+//     if (!inp1.includes(inp[i])) {
+//         inp1.push(inp[i])
+//     }
+// }
+// console.log(inp1);
+//prgm-11-----------------------------------------------------------
+
+//prgm-12-----------------------------------------------------------
+//  If subseq's  array  sequence is present in the array, returns true or else returns false.
+// Let arr = [5, 7, 3, 2, 2, 7,-1, 5, -3, 13, 4]
+// Example:
+//            Input : Subseq1 = [7, -1, 5, -3] Output:  true
+//                    Subseq2 = [7, -1, 4, -3]       : false
+//                    Subseq3 = [ -1]                 : true
+//                    Subseq4 = [13, -3, 4, 1]        : false
+
+
+
+//prgm-12-----------------------------------------------------------
+
+//prgm-13-----------------------------------------------------------
+// Find sum of the Unique numbers:
+// Example : Let arr = [1, 2, 2, 1, 3, 5, 1];
+//  The unique numbers are 1,2, 3, 5 so the sum should be 11.
+
+// let arr = [1, 2, 2, 1, 3, 5, 1];
+// let ar=[]
+// for (i = 0; i < arr.length; i++){
+//     if (!ar.includes(arr[i])) {
+//         ar.push(arr[i])
+//     }
+// } console.log(ar);
+// let sum = 0;
+// for (i = 0; i < ar.length; i++){
+//     sum+=ar[i]
+// }
+// console.log(sum);
+
+//prgm-13-----------------------------------------------------------
+
 
 // var a;
 // a=null
@@ -616,16 +1001,48 @@
 // input = 5;
 // output = 5*4*3*2*1=125
 
-var a = ["string1234string", "chai7234ya", "uhyb567r"];
-c = [];
+//count of numbers inside a string
+// var a = ["string1234string", "chai7234ya", "uhyb567r"];
+// c = [];
 
-for (i = 0; i < a.length; i++) {
-  b = 0;
-  for (j = 0; j < a[i].length; j++) {
-    if (/\d/.test(a[i][j])) {
-      b += parseInt(a[i][j]);
-    }
-  }
-  c.push(b);
-}
-console.log(c);
+// for (i = 0; i < a.length; i++) {
+//   b = 0;
+//   for (j = 0; j < a[i].length; j++) {
+//     if (/\d/.test(a[i][j])) {
+//       b += parseInt(a[i][j]);
+//     }
+//   }
+//   c.push(b);
+// }
+// console.log(c);
+
+
+// var x = 5;
+// var y = x++;
+// console.log(y);
+// var z = ++x;
+// console.log(z);
+// console.log(x);
+// console.log(x+y+z);
+
+//alphabet printing------------------------
+// let b=[]
+// for (let i = 65; i <= 90; i++){
+//     let a = String.fromCharCode(i)
+//     console.log(a + [i - 64]);
+//     b.push(a + [i - 64]);
+    
+// }console.log(b);
+
+ 
+// let arr = [1, 2, 2, 2, 3, 3, 4, 5, 5, 8];
+// let c = 0;
+// for (let i = 0; i < arr.length; i++) {
+    
+//     for (let j = i + 1; j < arr.length; j++){
+//         if (arr[i]== arr[j]) {
+//             c++;
+//         }
+//     }
+// }
+// console.log(c);
