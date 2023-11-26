@@ -320,8 +320,6 @@
 //     console.log(`${i} * 2 = ${c}`);
 // }
 
-
-
 //prgm-19-----------------------------------------
 
 //prgm-20-----------------------------------------
@@ -397,21 +395,21 @@
 //prgm-24--------------------------------------------
 //  Print Patter using loop.
 
-//   		1 2 3 4 5
+//   	1 2 3 4 5
 //      1 2 3 4
-// 			1 2 3
-// 			1 2
+// 		1 2 3
+// 		1 2
 //      1
 
 //  debugger
-// let row = 1;
-// for (let i = 5; i >= 1; i--){
-//     let r = "";
-//     for (let j = 1; j <= i; j--){
-//         r += " *";
-//     }
-//     console.log(r);
-// }
+let row = 1;
+for (let i = 5; i >= 1; i--){
+    let r = "";
+    for (let j = 1; j <= i; j--){
+        r += " *";
+    }
+    console.log(r);
+}
 
 // let row1 = 5;
 // for (let i = 1; i <= row1; i++) {
@@ -514,13 +512,17 @@
 // 			Input:  n=5(length of array), arr= [5,3,1,4]
 // 			Output: 2 is missing
 // let n = 5;
-// let arr = [5, 3, 1, 4]
+// let arr = [5,3,1,4];
 // let a = arr.sort();
-// console.log(a);
-// for (i = 0; i <= n; i++){
-
+// let b = [];
+// // console.log(a);
+// for (i = 1; i <= n; i++) {
+//   if (!a.includes(i)) {
+//     b.push(i);
+//   }
 // }
-// console.log(a.length);
+// console.log(b);
+
 //prgm-29-------------------------------------------
 
 //prgm-30-------------------------------------------
@@ -611,7 +613,6 @@
 // console.log(obj);
 //prgm-1----------------------------------------
 
-
 //prgm-2---------------------------------------------------
 // Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
 // Examples :
@@ -631,7 +632,6 @@
 // console.log(arrOfMul(7, 5));
 
 // prgm-2---------------------------------------------------
-
 
 //prgm-3---------------------------------------------------------
 // Create the function that takes an array with objects and returns the sum of people's budgets.
@@ -667,7 +667,6 @@
 // console.log(a);
 //prgm-3---------------------------------------------------------
 
-
 //prgm-4------------------------------------------------
 // Create a function that takes an array of objects like { name: "John", notes: [3, 5, 4]} and returns an array of objects like { name: "John", avgNote: 4 }. If a student has no notes (an empty array) then let's assume avgNote: 0.
 // 	Example :
@@ -686,7 +685,6 @@
 // }
 // console.log(arr([{ name: "John", notes: [3, 5, 4] }]));
 //prgm-4------------------------------------------------
-
 
 //prgm-5-----------------------------------------------------------
 // Create a function that moves all capital letters to the front of a word.
@@ -729,8 +727,14 @@
 // console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 2));
 // console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 3));
 // console.log(count([1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10], 5));
-//prgm-6-----------------------------------------------------------
 
+// let arr = [1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10];
+// let c = 0;
+// for (i = 0; i < arr.length; i++){
+    
+// }
+
+//prgm-6-----------------------------------------------------------
 
 //prgm-7--------------------------------------------------
 // Write a function that accepts an array of strings. Return the longest string(can not use predefined function).
@@ -747,7 +751,6 @@
 // }
 // console.log(len(["nik", "mikhil", "Cow", "Elephant"]));
 //prgm-7-----------------------------------------------------------
-
 
 //prgm-8------------------------------------------------------
 // Most Commonly Used two Character in String(can not use predefined function)
@@ -766,7 +769,7 @@
 //         str1 += str[j];
 //       }
 //     }
-    //   }
+//   }
 //     if (str[i] == "i" || str[i] == "a") {
 //         str1 += str[i];
 //     }
@@ -779,7 +782,6 @@
 // }
 // console.log(x);
 //prgm-8-----------------------------------------------------------
-
 
 //prgm-9-------------------------------------------------------
 // Write Program to remove duplicate elements in an array and sort it in descending order(can not use predefined function).
@@ -809,7 +811,7 @@
 
 // let inp = "a + b - (9 + c)=3";
 // for (let i = 0; i < inp.length; i++){
-    
+
 // }
 
 //object------------------------------------------------------------
@@ -840,8 +842,6 @@
 //                    Subseq3 = [ -1]                 : true
 //                    Subseq4 = [13, -3, 4, 1]        : false
 
-
-
 //prgm-12-----------------------------------------------------------
 
 //prgm-13-----------------------------------------------------------
@@ -863,7 +863,6 @@
 // console.log(sum);
 
 //prgm-13-----------------------------------------------------------
-
 
 // var a;
 // a=null
@@ -1016,7 +1015,6 @@
 // }
 // console.log(c);
 
-
 // var x = 5;
 // var y = x++;
 // console.log(y);
@@ -1031,18 +1029,91 @@
 //     let a = String.fromCharCode(i)
 //     console.log(a + [i - 64]);
 //     b.push(a + [i - 64]);
-    
+
 // }console.log(b);
 
- 
-// let arr = [1, 2, 2, 2, 3, 3, 4, 5, 5, 8];
-// let c = 0;
-// for (let i = 0; i < arr.length; i++) {
-    
-//     for (let j = i + 1; j < arr.length; j++){
-//         if (arr[i]== arr[j]) {
-//             c++;
-//         }
+//  let a = [2, 3, 3, 4, 5, 6, 6, 8, 8, 8, 12, 12];
+//  d = [];
+//  for (i = 0; i < a.length; i++) {
+//    if (a[i] == a[i + 1]) {
+//      d.push(a[i]);
+//    }
+//  }
+//  let bb = new Set(d);
+//  console.log(bb.size);
+
+//***********Conut of array*****************/
+// let arr = [1, 5, 3]
+// let c=0
+// arr.forEach((val,ind) =>
+//     c+=val,
+// );
+// console.log(c);
+
+// Return the even the numbers from the array without using the predefined method push
+// let a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// b=[]
+// for (let i = 0; i < a.length; i++){
+//     if (a[i] % 2 == 0) {
+//         b.push(a[i])
+//         console.log(a[i]);
+//     }
+// } console.log(b);
+
+// let a=[0,1,2,3,4,5,6,7,8,9,10]
+// let b=[]
+// for(i in a){
+//     if(a[i]%2==0){
+//         b[b.length]=a[i]
 //     }
 // }
-// console.log(c);
+// console.log(b)
+
+
+// print the words of the numbers in the array as the output
+// let a = [0, 1, 2,3,4,5,6,7,8,9,10];
+// let b = [];
+// for (i = 0; i < a.length; i++) {
+//   a[i] == 0
+//     ? b.push("Zero")
+//     : a[i] == 1
+//     ? b.push("one")
+//     : a[i] == 2
+//     ? b.push("two")
+//     : a[i] == 3
+//     ? b.push("three")
+//     : a[i] == 4
+//     ? b.push("four")
+//     : a[i] == 5
+//     ? b.push("five")
+//     : a[i] == 6
+//     ? b.push("six")
+//     : a[i] == 7
+//     ? b.push("seven")
+//     : a[i] == 8
+//     ? b.push("eight")
+//     : a[i] == 9
+//     ? b.push("nine")
+//     : a[i] == 10
+//     ? b.push("ten")
+//     : "invalid";
+// //   if (a[i] == 0) {
+// //     b.push("zero");
+// //   } else if (a[i] == 1) {
+// //     b.push("one");
+// //   } else b.push("two");
+// }
+// console.log(b);
+
+// output: ['Zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
+
+// checking missing and adding to the previous array and getting sequence
+// let a = [1, 2, 4, 6, 7, 8];
+// let b = []
+// for (i = 1; i < a.length; i++){
+//     if (!a.includes(i)) {
+//         b.push(i);
+//     }
+// } console.log(b);
+// let c = a.concat(b);
+// console.log(c.sort());
