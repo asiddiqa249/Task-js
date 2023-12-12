@@ -15,6 +15,7 @@
    // bdy.insertAdjacentElement("afterend",h1create)
    bdy.append(h1create);
    h1create.style.textAlign="center";
+
    let image=document.createElement("img");
    //console.log(image)
    image.setAttribute("src","./photo.jpg")
@@ -22,21 +23,27 @@
    image.style.width="100px";
    image.style.float="right";
    bdy.appendChild(image)
+
    let name=document.createElement("h3");
    name.innerText="Ayesha Siddiqa";
    bdy.append(name);
+
    let mail=document.createElement("p");
    mail.innerText="asiddiqa249@gmail.com";
    bdy.append(mail);
+
    let num=document.createElement("p");
    num.innerText="9390553816";
    bdy.append(num);
+
    let objhead=document.createElement("h2");
    objhead.innerText="Career Objectives";
    bdy.appendChild(objhead);
+
    let obj=document.createElement("p");
    obj.innerText="To obtain a challenging position as a Software Engineer in a leading multi-national organization where I can use my qualification and skills to prove my abilities.";
    bdy.appendChild(obj);
+   
    let qual=document.createElement("h2");
    qual.innerText="Educational Qualification";
    bdy.appendChild(qual);

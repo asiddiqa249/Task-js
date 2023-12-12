@@ -155,12 +155,12 @@
 //Example:
 //secondLargest([10, 40, 30, 20, 50]) ➞ 40
 
-//function sort(arr) {
+// function sort(arr) {
 //    let s = arr.sort((a, b) => a - b);
 //    return s;
-//}
+// }
 // let x = sort([3, 5, 6, 8, 4])
-//console.log(x[x.length-2])
+// console.log(x[x.length-2])
 
 // function sort(arr) {
 //     for (i = 0; i < arr.length; i++){
@@ -402,14 +402,14 @@
 //      1
 
 //  debugger
-let row = 1;
-for (let i = 5; i >= 1; i--){
-    let r = "";
-    for (let j = 1; j <= i; j--){
-        r += " *";
-    }
-    console.log(r);
-}
+// let row = 1;
+// for (let i = 5; i >= 1; i--){
+//     let r = "";
+//     for (let j = 1; j <= i; j--){
+//         r += " *";
+//     }
+//     console.log(r);
+// }
 
 // let row1 = 5;
 // for (let i = 1; i <= row1; i++) {
@@ -456,6 +456,21 @@ for (let i = 5; i >= 1; i--){
 // console.log(Prime(1));
 // console.log(Prime(2));
 // console.log(Prime(4));
+
+// let num =2 ;
+// let c = 0;
+// for (let i = 1; i <=num; i++) {
+//   if (num % i == 0) {
+//     c++;
+//   }
+// }
+// if (c == 2) {
+//     console.log("prime");
+// } else if(num<2){
+//     console.log("composite");
+// } else {
+//     console.log("not a prime");
+// }
 
 // prime num from range 2-50;
 // for (let i = 2; i <= 50; i++) {
@@ -517,9 +532,14 @@ for (let i = 5; i >= 1; i--){
 // let b = [];
 // // console.log(a);
 // for (i = 1; i <= n; i++) {
-//   if (!a.includes(i)) {
-//     b.push(i);
-//   }
+// //   if (!a.includes(i)) {
+// //     b.push(i);
+//     //   }
+//     for (j = 0; j < a.length; j++){
+//         if (a[j] === i) {
+//             b.push(i)
+//         }
+//     }
 // }
 // console.log(b);
 
@@ -550,7 +570,7 @@ for (let i = 5; i >= 1; i--){
 // program to insert  the elements of an array for specific index.
 
 // 			Input: [1,2,3,4,5,7,8,9,10] , index=5
-// Output: [1, 2, 3, 4, 5, 6, 78, 9, 10]
+// Output: [1, 2, 3, 4, 5, 6, 7,8, 9, 10]
 
 // let arr = [1, 2, 3, 4, 5, 7, 8, 9, 10];
 // arr.splice(5,0,6)
@@ -731,7 +751,7 @@ for (let i = 5; i >= 1; i--){
 // let arr = [1, 6, 3, 1, 5, 9, 7, 2, 1, 9, 3, 7, 8, 9, 10];
 // let c = 0;
 // for (i = 0; i < arr.length; i++){
-    
+
 // }
 
 //prgm-6-----------------------------------------------------------
@@ -741,13 +761,12 @@ for (let i = 5; i >= 1; i--){
 // Input: [‘nik’, ’mikhil’, ’Cow’,’Elephant’] Output: Elephant
 
 // function len(arr) {
-//     let str = arr[0];
+//     let max = arr[0];
 //     for (i = 0; i < arr.length; i++){
-//         if (arr[i].length > str.length) {
-//             str = arr[i]
+//         if (arr[i].length > max.length) {
+//             max = arr[i]
 //         }
-
-//     } return str;
+//     } return max;
 // }
 // console.log(len(["nik", "mikhil", "Cow", "Elephant"]));
 //prgm-7-----------------------------------------------------------
@@ -757,30 +776,50 @@ for (let i = 5; i >= 1; i--){
 // Input: "Hii i am ram"
 // Output: i, a
 
-// let str = "hii i am ram";
-// let str1 = "";
-
-// for (i = 0; i < str.length; i++) {
-//   let c = 0;
-//   for (j = i+1; j < str.length; j++) {
-//     if (str[i] == str[j]) {
-//       c++;
-//       if (c == 1) {
-//         str1 += str[j];
+// function gettingStr(str) {
+//   let str1 = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let c = 0;
+//     for (let j = i + 1; j < str.length; j++) {
+//       if (str[i] == str[j]) {
+//         c++;
+//         if (c == 1) {
+//           str1 += str[i];
+//         }
 //       }
 //     }
 //   }
-//     if (str[i] == "i" || str[i] == "a") {
-//         str1 += str[i];
-//     }
-// }
-// let x=""
-// for (i = 0; i < str1.length; i++){
+//   let x = "";
+//   for (let i = 0; i < str1.length; i++) {
 //     if (!x.includes(str1[i])) {
-//         x+=str1[i]
+//       x += str1[i];
 //     }
+//   }
+//   return x.slice(0, 3);
 // }
-// console.log(x);
+// console.log(gettingStr("Hii i am ram"));
+
+// let str = "Hii i am ram";
+// let str1 = "";
+// for (let i = 0; i < str.length; i++) {
+//   let c = 0;
+//   for (let j = i + 1; j < str.length; j++) {
+//     if (str[i] == str[j]) {
+//       c++;
+//       if (c == 1) {
+//         str1 += str[i];
+//       }
+//     }
+//   }
+// }
+// let x = "";
+// for (let i = 0; i < str1.length; i++) {
+//   if (!x.includes(str1[i])) {
+//     x += str1[i];
+//   }
+// }
+// console.log(x.slice(0, 3));
+
 //prgm-8-----------------------------------------------------------
 
 //prgm-9-------------------------------------------------------
@@ -810,9 +849,13 @@ for (let i = 5; i >= 1; i--){
 // Input: a + b-(9+c)=3 Output: a + b- 9+c=3
 
 // let inp = "a + b - (9 + c)=3";
+// let newinp = "";
 // for (let i = 0; i < inp.length; i++){
-
+//   if (inp[i] !== "(" && inp[i] !== ")") {
+//     newinp+=inp[i]
+//   }
 // }
+// console.log(newinp);
 
 //object------------------------------------------------------------
 // const name = "sai"
@@ -841,6 +884,8 @@ for (let i = 5; i >= 1; i--){
 //                    Subseq2 = [7, -1, 4, -3]       : false
 //                    Subseq3 = [ -1]                 : true
 //                    Subseq4 = [13, -3, 4, 1]        : false
+
+
 
 //prgm-12-----------------------------------------------------------
 
@@ -1069,7 +1114,6 @@ for (let i = 5; i >= 1; i--){
 // }
 // console.log(b)
 
-
 // print the words of the numbers in the array as the output
 // let a = [0, 1, 2,3,4,5,6,7,8,9,10];
 // let b = [];
@@ -1117,3 +1161,192 @@ for (let i = 5; i >= 1; i--){
 // } console.log(b);
 // let c = a.concat(b);
 // console.log(c.sort());
+
+// 1.Write a JavaScript function that takes a number as a parameter and prints whether it's positive, negative, or zero.
+
+// let num = parseInt(prompt("enter num"));
+// if (num > 0) {
+//     console.log("num is positive");
+// } else if(num<0){
+//     console.log("num is negative");
+// } else if(num==0){
+//     console.log("num is zero");
+// } else {
+//     console.log("invalid num");
+// }
+
+// let num = parseInt(prompt("enter num"));
+// function Int(num) {
+//     if (num > 0) {
+//       return `${num} is positive`;
+//     } else if (num < 0) {
+//       return `${num} is negative`;
+//     } else if (num == 0) {
+//       return `num is zero`;
+//     } else {
+//       return `${num} is inavlid`;
+//     }
+// }
+// console.log(Int(num));
+
+// 2. Write a JavaScript function that takes a positive integer as a parameter and calculates its factorial using a for loop. The factorial of a number N is the product of all positive integers less than or equal to N.
+
+// let N = parseInt(prompt("enter n"));
+// function num(N) {
+//     let fact = 1;
+//     for (i = 1; i <=N; i++){
+//         fact *= i;
+//         // console.log(fact);
+//     }
+//     return fact;
+// }
+// console.log(num(N));
+
+// 3. Write a JavaScript function that takes two numbers as parameters and returns the larger one.
+
+// repeation of numbers
+// let a = [2, 8, 2, 4, 8, 8, 7, 7, 7];
+
+// // 2 present 2 times
+// // 8 present 2 times
+// // 7 present 2 times
+
+// function repeat(a, num) {
+//     let c = 0;
+//     for (i = 0; i < a.length; i++){
+//         if (a[i] == num) {
+//             c++;
+//         }
+//     }return `${num} present ${c} times`
+// }
+// console.log(repeat(a,7));
+
+// let a=""
+// let b=[]
+// for (i = 65; i <= 90; i++){
+//     console.log(String.fromCharCode(i) + (i - 64));
+//     b.push(String.fromCharCode(i) + (i - 64));
+//     a += String.fromCharCode(i) + (i - 64);
+// }
+// console.log(b);
+// console.log(" "+a+" ");
+
+// Take two strings and find whether the given strings are anagram are not
+// let a = "ate";
+// let b = "eat";
+// if (a.split("").sort().join("") == b.split("").sort(0).join()) {
+//     console.log("Anagram");
+// } else {
+//     console.log("not an anagram");
+// }
+
+// Birthday party is possible if every individual has different days in an array if any duplicate values are present birthday party is impossible
+
+// function arr(a) {
+//     a.sort();
+//     for (i = 0; i < a.length; i++) {
+//       if (a[i] == a[i + 1]) {
+//           return false;
+//       }
+//     } return true;
+// }
+// console.log(arr([1, 3, 4,5, 6]));
+// console.log(arr([1,3,2,2,4,5,6]));
+
+// We have two stores where the item cost varies and percentage is also varies find the best store among them.
+// let a = 200;
+// let b = 100;
+// let p1 = 40;
+// let p2 = 10;
+// let a1 = a * (p1 / 100)
+// let b1 = b * (p2 / 100)
+// if ((a - a1) < (b - b1)) {
+//     console.log("a is prefered");
+// } else if ((a - a1) == (b - b1)) {
+//     console.log("both are prefered");
+// } else {
+//     console.log("b is prefered");
+// }
+
+// Spread Operator(...)
+// const ar = [1, 2, 3]
+// const arr = [...ar, 4, 5]
+// console.log(arr);
+
+// let n=6
+// let a1=[1,2,3,4,5]
+// let b = ""
+// for (i = 0; i < a1.length; i++){
+//     if (a1[i] <= n) {
+//         n = n - a1[i];
+//         b += 1
+
+//     } else {
+//         b +=0
+//     }
+// }
+// console.log(b);
+
+// let n = 5;
+// let arr = [3,2,2,3,3];
+// let x = arr.sort()
+// console.log(x);
+// function sample(x) {
+//   for (i = 0; i < x.length; i++) {
+//       for (j = i + 1; j < x.length; j++){
+//           if()
+//       }
+//   }
+//   return true;
+// }
+// console.log(sample(x));
+
+// const a = [[1, 2, 3], [4, 5, [6, 7]],[8, 9]];
+// const ar = a.flat(2);
+// console.log(ar);
+
+
+// ---------------prblm solving (8-12-23)-------------------
+// let a = 10;
+// let b = [];
+// let str = "RRLLL";
+// for (i = 0; i <= str.length; i++) {
+//   if (str[i] == "R") {
+//     a = a + 1;
+//   } else {
+//     a = a - 1;
+//   }
+//   if (!b.includes(a)) {
+//     b.push(a);
+//   }
+// }
+// console.log(b);
+// console.log(b.length);
+
+// prblm solving(9-12-23)-----
+// union--------
+// let arr = [1, 2, 3, 4, 5];
+// let arr1 = [1, 2, 3, 6];
+// let res = [];
+// for (i = 0; i < arr.length; i++) {
+//   if (!res.includes(arr[i])) {
+//     res.push(arr[i]);
+//   }
+// }
+// for (i = 0; i < arr1.length; i++) {
+//   if (!res.includes(arr1[i])) {
+//     res.push(arr1[i]);
+//   }
+// }
+// console.log(res);
+
+// intersection-----------
+// let arr = [1, 2, 3, 4, 5];
+// let arr1 = [1, 2, 3, 6];
+// let res = [];
+// for (i = 0; i < arr.length; i++) {
+//   if (arr1.includes(arr[i])) {
+//     res.push(arr[i]);
+//   }
+// }
+// console.log(res);
