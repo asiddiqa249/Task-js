@@ -11,86 +11,103 @@
         background-size: cover;
         color: white;
       }
+
       .btnlogin {
-        position: relative;
-        top: 150px;
-        text-align: center;
-      }
-      .btnlogin button {
         width: 100px;
         padding: 0.5%;
-        background-color:black;
+        background-color: black;
         color: white;
         font-size: 20px;
-        border-radius: 10px;
+        border-radius: 5px;
+        margin-bottom: 3%;
       }
       .container {
         position: relative;
         top: 160px;
-        left: 40.5%;
+        left: 35%;
         border: 2px solid white;
         width: 300px;
-        
         padding: 2%;
         box-shadow: 0px 0px 3px 3px white;
-        background-color: white;
+        background-image: linear-gradient(
+          to right,
+          rgb(249, 220, 183),
+          rgb(233, 95, 118)
+        );
         border-radius: 5px;
       }
       .lbel {
         margin-bottom: 5%;
       }
-      #login{
+      #login {
         background-color: black;
         color: white;
-        border-radius: 10px;
+        border-radius: 5px;
         padding: 3%;
-        width: 60px;
+        width: 100%;
         font-size: 16px;
       }
-      input{
-        font-size: 18px;
+      #login:hover {
+        background-color: rgb(108, 105, 105);
+      }
+      input {
+        width: 100%;
+        font-size: large;
+      }
+      label {
+        font-size: larger;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div class="btnlogin">
-      <button>Login</button>
-    </div>
     <div class="container">
+      <center><button class="btnlogin">Login</button></center>
       <form action="">
-        <input type="text" placeholder="Username..." class="lbel" id="user"/><br />
-        <input type="text" placeholder="Password..." class="lbel" id="pass"/><br />
+        <label for="username" id="userlbel">Username : </label><br /><br />
+        <input
+          type="text"
+          placeholder="Username..."
+          class="lbel"
+          id="user"
+        /><br /><br />
+        <label for="Password" id="plabel">Password : </label><br /><br />
+        <input
+          type="password"
+          placeholder="Password..."
+          class="lbel"
+          id="pass"
+        /><br /><br />
         <button id="login">Login</button>
       </form>
       <script>
-        let usernameget=document.getElementById("user");
-        let passwordget=document.getElementById("pass");
+        let usernameget = document.getElementById("user");
+        let passwordget = document.getElementById("pass");
         let form = document.forms;
         console.log(form[0]);
         form[0].addEventListener("submit", (e) => {
           e.preventDefault();
-          let valueget= JSON.parse(localStorage.getItem("get"));
-          console.log(valueget)
-          let uservalid=usernameget.value;
-          let passvalid=passwordget.value;
-          console.log(uservalid)
-          
-          let userval=valueget.find((val)=>{
-            return val["username"]===uservalid
-            console.log(userval)
-          })
-          let passval=valueget.find((val)=>{
-            return val["password"]===passvalid
-            console.log(passval)
-          })
-          if(userval && passval){
-            window.location.assign("./Home.html")
-          }
-          else{
-            alert("credentials are invalid")
+          let valueget = JSON.parse(localStorage.getItem("get"));
+          console.log(valueget);
+          let uservalid = usernameget.value;
+          let passvalid = passwordget.value;
+          console.log(uservalid);
+
+          let userval = valueget.find((val) => {
+            return val["username"] === uservalid;
+            console.log(userval);
+          });
+          let passval = valueget.find((val) => {
+            return val["password"] === passvalid;
+            console.log(passval);
+          });
+          if (userval && passval) {
+            window.location.assign("./Home.html");
+          } else {
+            alert("credentials are invalid");
+            form.reset();
           }
         });
-        
       </script>
     </div>
   </body>

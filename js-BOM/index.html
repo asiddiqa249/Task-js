@@ -11,10 +11,10 @@
         background-size: cover;
         color: white;
       }
-      .btn {
-        position: relative;
-        top: 150px;
-        left: 30%;
+      .container button {
+        font-size: larger;
+        margin-bottom: 3%;
+        margin-top: 0px;
       }
       button {
         padding: 10px;
@@ -26,101 +26,159 @@
       }
       .container {
         position: relative;
-        top: 150px;
+        top: 80px;
         left: 30%;
         padding: 2%;
         border: 2px solid white;
         width: 300px;
-        height: 150px;
-        background-color: white;
+        background-image: linear-gradient(
+          to right,
+          rgb(137, 226, 223),
+          rgb(223, 189, 159)
+        );
         box-shadow: 0px 0px 4px 4px white;
         border-radius: 5px;
       }
       .lbel {
         margin-bottom: 5%;
       }
-      #submit{
+      #submit {
         color: white;
         background-color: black;
         padding: 1% 3%;
-        border-radius: 10px;
+        margin-right: 1%;
+        border-radius: 5px;
+        width: 48%;
       }
-      #log{
+      #submit:hover {
+        background-color: rgb(188, 179, 179);
+      }
+      #skip {
+        color: white;
+        background-color: black;
+        padding: 1% 3%;
+        margin-right: 1%;
+        border-radius: 5px;
+        width: 48%;
+      }
+      #skip:hover {
+        background-color: rgb(188, 179, 179);
+      }
+      #log {
         background-color: black;
         color: white;
         padding: 1% 3%;
-        border-radius: 10px;
+        width: 48%;
+        margin-left: 1%;
+        border-radius: 5px;
       }
-      input{
-        font-size: 18px;
+      #log:hover {
+        background-color: rgb(188, 179, 179);
+      }
+      input {
+        width: 100%;
+        font-size: large;
+      }
+      label {
+        font-size: larger;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div class="btn">
-      <button>Registration</button>
-    </div>
     <div class="container">
+      <center><button>Registration</button></center>
       <form action="">
-        <!-- <label for="username" id="userlbel">Username : </label><br> -->
-        <input type="text"  placeholder="usename..." class="lbel" id="input" /><br />
-        <input type="text" placeholder="Password..." class="lbel" /><br />
-        <input type="text" placeholder="Confirm Password..." class="lbel" /><br />
-        <input type="Submit" id="submit" />
-        <input type="button" value="Login" id="log" />
+        <label for="username" id="userlbel">Username : </label><br /><br />
+        <input
+          type="text"
+          placeholder="Usename..."
+          class="lbel"
+          id="input"
+        /><br />
+        <label for="Password" id="plabel">Password : </label><br /><br />
+        <input type="password" placeholder="Password..." class="lbel" /><br />
+        <label for="Cpass">Confirm Password : </label><br /><br />
+        <input
+          type="password"
+          placeholder="Confirm Password..."
+          class="lbel"
+        /><br /><br />
+        <input type="Submit" id="submit" value="Register" />
+        <input type="button" id="skip" value="Skip" /><br />
+        <p style="color: black">If user already exist please login</p>
+        <center><input type="button" value="Login" id="log" /></center>
       </form>
     </div>
     <script>
       let divget = document.getElementsByTagName("div");
       let divcon = divget[1];
-      
+
       //console.log(divcon)
       let form = document.forms;
       console.log(form[0]);
       form[0].addEventListener("submit", (e) => {
         e.preventDefault();
         console.log(e);
+        //let ulabel=document.getElementById("userlbel")
         let username = e.target[0].value;
-        if (username[0] !== username[0].toUpperCase() && username.length < 10) {
-          alert("Write in correct format");
+        let password = e.target[1].value;
+        let confirmpassword = e.target[2].value;
+        if (!username || !password || !confirmpassword) {
+          alert("Please provide all credentials");
+          return;
+        }
+
+        if (!/^[A-Z]/.test(username) || username.length <= 8) {
+          alert(
+            "Username is not in correct format. It should start with an uppercase letter and have more than 8 characters."
+          );
           return;
         }
         console.log(username);
 
-        let password = e.target[1].value;
-        let passtype= /[A_Z]/.test(password)&&/[a-z]/.test(password)&&/\d/.test(password);
-        if ( passtype && password.length < 8) {
+        let passtype =
+          /[A_Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /\d/.test(password);
+        if (passtype && password.length < 8) {
           alert("Password is not in correct format");
           return;
         }
         console.log(password);
 
-        let confirmpassword = e.target[2].value;
         if (password !== confirmpassword) {
           alert("password and confirmpassword are not same");
           return;
         }
         console.log(confirmpassword);
 
-        let user = {username, password };
+        let user = { username, password };
         let reg = JSON.parse(localStorage.getItem("get")) || [];
-        
-        console.log(reg)
-        let duplicate=reg.find((val)=>val.username===username);
-        console.log(duplicate)
-        if(duplicate){
+        console.log(reg);
+        let duplicate = reg.find((val) => val.username === username);
+        console.log(duplicate);
+        if (duplicate) {
           alert("user already exist");
-        }else{
+        } else if (!username || !password || !confirmpassword) {
+          alert("Please provide all credentials");
+          return;
+        } else {
           reg.push(user);
           localStorage.setItem("get", JSON.stringify(reg));
-          alert("User registered successfully!..")
+          alert("User registered successfully!..");
+          window.location.assign("./login.html");
           form.reset();
         }
       });
-      let Login=document.getElementById("log");
-      Login.addEventListener("click",()=>{
-        window.location.assign("./login.html")
-      })
+      let Skip = document.getElementById("skip");
+      Skip.addEventListener("click", () => {
+        window.location.assign("./Home.html");
+      });
+      let Login = document.getElementById("log");
+      Login.addEventListener("click", () => {
+        window.location.assign("./login.html");
+      });
     </script>
   </body>
 </html>

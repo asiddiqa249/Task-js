@@ -26,7 +26,7 @@
         justify-content: space-evenly;
         margin-bottom: 1%;
       }
-      .btns button{
+      .btns button {
         background-color: antiquewhite;
         border-radius: 5px;
         margin-bottom: 1%;
@@ -53,15 +53,35 @@
         box-shadow: 0 0 7px 7px white;
       }
 
-      
       button {
         margin-top: 10px;
         height: 40px;
         width: 160px;
         font-size: large;
       }
-      #card{
-        height:100%;
+      #card {
+        height: 100%;
+      }
+      .seemore {
+        background-color: antiquewhite;
+        width: 47%;
+      }
+      .seemore:hover {
+        width: 48%;
+        background-color: rgb(163, 247, 219);
+        border-radius: 10px;
+      }
+      .buyNow {
+        background-color: antiquewhite;
+        width: 47%;
+      }
+      .buyNow:hover {
+        width: 48%;
+        background-color: rgb(163, 247, 219);
+        border-radius: 10px;
+      }
+      .addCart:hover {
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -353,7 +373,7 @@
         },
       ];
 
-      let h1get=document.getElementsByTagName("h1")
+      let h1get = document.getElementsByTagName("h1");
 
       let divgetting = document.getElementById("Clothing");
       let login = document.getElementById("login");
@@ -378,18 +398,21 @@
         let productImg = document.createElement("img");
         productImg.setAttribute("src", val.image);
         productImg.style.width = "100%";
-        productImg.style.height="150px"
+        productImg.style.height = "150px";
         divcreating.appendChild(productImg);
 
         let productTitle = document.createElement("h3");
         productTitle.innerText = `${val.title}`;
         productTitle.style.color = "white";
+        productTitle.style.whiteSpace = "nowrap";
+        productTitle.style.overflow = "hidden";
+        productTitle.style.textOverflow = "ellipsis";
         divcreating.appendChild(productTitle);
 
-        let clothprice=document.createElement("p");
-        clothprice.innerText=`Price : ${val.price}`;
-        divcreating.appendChild(clothprice)
-    
+        let clothprice = document.createElement("p");
+        clothprice.innerText = `Price : ${val.price}`;
+        divcreating.appendChild(clothprice);
+
         let productBrand = document.createElement("p");
         productBrand.innerText = `Category : ${val.category}`;
         divcreating.appendChild(productBrand);
@@ -397,9 +420,8 @@
         let seemore = document.createElement("button");
         seemore.innerText = "See more";
         seemore.style.padding = "5px";
-        seemore.style.width = "48%";
-        seemore.style.marginRight="2%"
-        seemore.style.backgroundColor="antiquewhite"
+        seemore.style.marginRight = "2%";
+        seemore.setAttribute("class", "seemore");
         seemore.addEventListener("click", () => {
           window.location.assign("./seemore.html");
           localStorage.setItem("seemore", JSON.stringify(arr[ind]));
@@ -409,23 +431,23 @@
         let productAddCart = document.createElement("button");
         productAddCart.innerText = "Add to cart";
         productAddCart.style.padding = "2%";
-        productAddCart.style.width="100%"
-        productAddCart.style.backgroundColor="pink"
+        productAddCart.style.width = "100%";
+        productAddCart.setAttribute("class", "addCart");
+        productAddCart.style.backgroundColor = "pink";
         productAddCart.addEventListener("click", () => {
           let cartgetting = localStorage.getItem("cart");
           let cart12 = cartgetting != null ? JSON.parse(cartgetting) : [];
           cart12.push(arr[ind]);
           console.log(JSON.parse(cartgetting));
           localStorage.setItem("cart", JSON.stringify(cart12));
+          alert("Item is added to cart");
         });
 
         let productBuy = document.createElement("button");
         productBuy.innerText = "Buy Now";
-        productBuy.style.width = "48%";
-        productBuy.style.padding="5px";
-        productBuy.style.marginLeft="2%"
-        productBuy.style.backgroundColor="antiquewhite"
-        productBuy.style.borderRadius = "2px";
+        productBuy.setAttribute("class", "buyNow");
+        productBuy.style.padding = "5px";
+        productBuy.style.marginLeft = "2%";
 
         productBuy.addEventListener("click", () => {
           window.location.assign("./buy.html");
@@ -434,7 +456,7 @@
         divcreating.appendChild(productBuy);
 
         divcreating.appendChild(productAddCart);
-        console.log(divcreating)
+        console.log(divcreating);
         divgetting.appendChild(divcreating);
       });
 
@@ -461,12 +483,12 @@
         a.filter((val, ind, array) => {
           let divcreating = document.createElement("div");
           divcreating.className = "product-card";
-          divcreating.setAttribute("id","card");
+          divcreating.setAttribute("id", "card");
 
           let productImg = document.createElement("img");
           productImg.setAttribute("src", val.image);
           productImg.style.width = "100%";
-          productImg.style.height="150px"
+          productImg.style.height = "150px";
           divcreating.appendChild(productImg);
 
           let productId = document.createElement("p");
@@ -476,10 +498,17 @@
           let productTitle = document.createElement("h3");
           productTitle.innerText = `${val.title}`;
           productTitle.style.color = "white";
+          productTitle.style.whiteSpace = "nowrap";
+          productTitle.style.overflow = "hidden";
+          productTitle.style.textOverflow = "ellipsis";
+
           divcreating.appendChild(productTitle);
 
           let productDescription = document.createElement("p");
           productDescription.innerText = `Description : ${val.description}`;
+          productDescription.style.whiteSpace = "nowrap";
+          productDescription.style.overflow = "hidden";
+          productDescription.style.textOverflow = "ellipsis";
           divcreating.appendChild(productDescription);
 
           let productPrice = document.createElement("p");
@@ -493,8 +522,9 @@
           let productAddCart = document.createElement("button");
           productAddCart.innerText = "Add to cart";
           productAddCart.style.width = "100%";
-          productAddCart.style.padding="2%";
-          productAddCart.style.backgroundColor="pink"
+          productAddCart.style.padding = "2%";
+          productAddCart.setAttribute("class", "addCart");
+          productAddCart.style.backgroundColor = "pink";
           productAddCart.addEventListener("click", () => {
             let cartgetting = localStorage.getItem("cart");
             let cart12 = cartgetting != null ? JSON.parse(cartgetting) : [];
@@ -506,9 +536,9 @@
           let productBuy = document.createElement("button");
           productBuy.innerText = "Buy Now";
           productBuy.style.width = "48%";
-          productBuy.style.padding="2%";
-          productBuy.style.marginLeft="2%"
-          productBuy.style.backgroundColor="antiquewhite"
+          productBuy.style.padding = "2%";
+          productBuy.style.marginLeft = "2%";
+          productBuy.style.backgroundColor = "antiquewhite";
           productBuy.style.borderRadius = "2px";
           productBuy.addEventListener("click", () => {
             window.location.assign("./buy.html");
@@ -520,7 +550,7 @@
           seemore.style.padding = "1%";
           seemore.style.marginRight = "2%";
           seemore.style.width = "48%";
-          seemore.style.backgroundColor="antiquewhite"
+          seemore.style.backgroundColor = "antiquewhite";
           seemore.addEventListener("click", () => {
             window.location.assign("./seemore.html");
             localStorage.setItem("seemore", JSON.stringify(arr[ind]));

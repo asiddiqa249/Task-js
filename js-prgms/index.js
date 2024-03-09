@@ -17,7 +17,6 @@
 //prgm-4----------------------
 // var e = +prompt("enter e");
 // console.log(e * 365.25 + " days");
-
 //prgm-4---------------------
 
 // prgm-5---------------------
@@ -74,13 +73,14 @@
 //prgm-10-----------------------
 //Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
 
-//let arr = [9, 3, 2, 4, 1, 6, 0, 8, 5, 1]
-//if (arr.length === 10 && arr.every( num=> num>= 0 && num <= 9)) {
+// let arr = [9, 3, 2, 4, 1, 6, 0, 8, 5, 1]
+// if (arr.length === 10 && arr.every( num=> num>= 0 && num <= 9)) {
 //    let phn = `((${arr[0]}${arr[1]}${arr[2]}) ${arr[3]}${arr[4]}${arr[5]}-${arr[6]}${arr[7]}${arr[8]}${arr[9]})`;
 //    console.log(phn);
-//} else {
+// } else {
 //    console.log("invalid format")
-//}
+// }
+
 //prgm-10-----------------------
 
 //prgm-11---------------------------
@@ -526,22 +526,23 @@
 
 // 			Input:  n=5(length of array), arr= [5,3,1,4]
 // 			Output: 2 is missing
-// let n = 5;
-// let arr = [5,3,1,4];
+// let n = 8;
+let arr = [5, 3, 1, 4, 8];
+let max = Math.max(...arr);
 // let a = arr.sort();
-// let b = [];
-// // console.log(a);
-// for (i = 1; i <= n; i++) {
-// //   if (!a.includes(i)) {
-// //     b.push(i);
-//     //   }
-//     for (j = 0; j < a.length; j++){
-//         if (a[j] === i) {
-//             b.push(i)
-//         }
-//     }
-// }
-// console.log(b);
+let b = [];
+// console.log(a);
+for (i = 1; i <= max; i++) {
+  if (!arr.includes(i)) {
+    b.push(i);
+  }
+  // for (j = 0; j < a.length; j++) {
+  //   if (a[j] === i) {
+  //     b.push(i);
+  //   }
+  // }
+}
+console.log(b);
 
 //prgm-29-------------------------------------------
 
@@ -885,8 +886,37 @@
 //                    Subseq3 = [ -1]                 : true
 //                    Subseq4 = [13, -3, 4, 1]        : false
 
+// let arr = [5, 7, 3, 2, 2, 7, -1, 5, -3, 13, 4];
+// let inp = [7, -1,5 , -3];
+// let n = inp.length;
+// let ref = 0;
+// for (let i = 0; i < arr.length; i++){
+//     if (inp[ref] == arr[i]) {
+//         ref++;
+//         if (ref == n) break;
+//     }
+// }
+// if (ref == n) {
+//     console.log(true);
+// } else {
+//     console.log(false);
+// }
 
-
+// function sequence(arr, inp) {
+//     let n = inp.length;
+//     let ref = 0;
+//     for (let i = 0; i < arr.length; i++){
+//         if (inp[ref] == arr[i]) {
+//             ref++
+//             if (ref == n) {
+//                 break;
+//             }
+//         }
+//     }
+//     if (ref == n) return(true);
+//     else return(false);
+// }
+// console.log(sequence([5, 7, 3, 2, 2, 7, -1, 5, -3, 13, 4], [7, -1, 4, -3]));
 //prgm-12-----------------------------------------------------------
 
 //prgm-13-----------------------------------------------------------
@@ -1212,14 +1242,15 @@
 // // 7 present 2 times
 
 // function repeat(a, num) {
-//     let c = 0;
-//     for (i = 0; i < a.length; i++){
-//         if (a[i] == num) {
-//             c++;
-//         }
-//     }return `${num} present ${c} times`
+//   let c = 0;
+//   for (i = 0; i < a.length; i++) {
+//     if (a[i] == num) {
+//       c++;
+//     }
+//   }
+//   return `${num} present ${c} times`;
 // }
-// console.log(repeat(a,7));
+// console.log(repeat(a, 7));
 
 // let a=""
 // let b=[]
@@ -1305,7 +1336,6 @@
 // const ar = a.flat(2);
 // console.log(ar);
 
-
 // ---------------prblm solving (8-12-23)-------------------
 // let a = 10;
 // let b = [];
@@ -1350,3 +1380,451 @@
 //   }
 // }
 // console.log(res);
+
+// let n = 5;
+// for (let i = 0; !(i==n+1); i++) {
+//    console.log(i);
+// }
+
+// let c = 5;
+// for (let i = 0; !(i >= c + 1); i++) {
+//   console.log(i);
+// }
+
+// let arr = [1, 2, 3, 8, 9]
+// let x = 5;
+// for (i = 0; i < arr.length; i++){
+//     for (j = i + 1; j < arr.length; j++){
+//         if (x == arr[i] + arr[j]) {
+//             console.log(arr[i],arr[j]);
+//         }
+//     }
+// }
+
+// let a = [2, 2, 3, 4, 5];
+// let b = [];
+// for (i = 0; i < a.length; i++) {
+//   let s = 0;
+//   for (j = 0; j < a.length; j++) {
+//     if (i != j) {
+//       s += a[j];
+//     }
+//   }
+//   b.push(s);
+// }
+// console.log(b);
+
+// [[2, 3], [3, [2, 3], [4, 5]]] =?
+//     Stars pyramid
+// r=4
+// for (i = 0; i <= r; i++){
+//     let x = "";
+//     for (k = 1; k <= i; k++){
+//         x += (r - i)+" ";
+//     }
+//     for (j = 1; j <= i; j++){
+//         x+="*"
+//     }
+//     console.log(x);
+// }
+
+// 18-12-23 PRoblem solving
+
+// let a="laptop"
+// let ar=[];
+// for(i=0;i<a.length;i++){
+//     if(!ar.includes(a[i])){
+//         ar.push(a[i])
+//     }
+// }
+// for (i of ar) {
+//     c = 0;
+//     for (j of a) {
+//         if (i == j) {
+//             c++;
+//         }
+//     }
+//     console.log(`${i} is ${c} times`)
+// }
+// Output
+// l is 1 times
+// a is 1 times
+// p is 2 times
+// t is 1 times
+// o is 1 times
+
+// unique values----
+// let a = "rorcky";
+// let ar = [];
+// for (i = 0; i < a.length; i++) {
+//   if (!ar.includes(a[i])) {
+//     ar.push(a[i]);
+//   }
+// }
+// console.log(ar);
+// for (i of ar) {
+//   c = 0;
+//   for (j of a) {
+//     if (i == j) {
+//       c = c + 1;
+//     }
+//   }
+//   if (c == 1) {
+//     console.log(i);
+//   }
+// }
+
+// Without using pedefined
+// let a = [12, 23, 45, 23, 38, 32, 23, 23];
+// let ar = [];
+// let dup = [];
+// for (i of a) {
+//   let c = 0;
+//   if (ar.length == 0) {
+//     ar.push(i);
+//   }
+//   for (j of ar) {
+//     if (i == j) {
+//       c++;
+//     }
+//   }
+//   if (c == 0) {
+//     ar.push(i);
+//   } else {
+//     dup.push(i);
+//   }
+// }
+// console.log(ar);
+// console.log(dup);
+
+// function array(ar) {
+//   let uni = [];
+//   let dup = [];
+//   let x = [];
+//   for (i of ar) {
+//     if (!x.includes(i)) {
+//       x.push(i);
+//     }
+//   }
+//   for (j of x) {
+//     let c = 0;
+//     for (k of ar) {
+//       if (j == k) {
+//         c = c + 1;
+//       }
+//     }
+//     if (c == 1) {
+//       uni.push(j);
+//     } else {
+//       dup.push(j);
+//     }
+//   }
+//   return `${uni} are unique and ${dup} are duplicate`;
+// }
+// console.log(array([12, 28, 34, 56, 28, 1, 34, 34]));
+
+// output
+// ["r", "o", "c", "k", "y"];
+// o
+// c
+// k
+// y
+
+// Multidimensional array
+// let s = [[1, 2, 3],[3, 5, 2],[[6, 8, 7], 1, [3, [7, 6, 4], 9, 0]]];
+// let a = [];
+// function flatting(j) {
+//   for (i of j) {
+//     if (i.length > 0) {
+//       flatting(i);
+//     } else {
+//       a.push(i);
+//     }
+//   }
+// }
+// for (i of s) {
+//   for (j of i) {
+//     if (j.length > 0) {
+//       flatting(j);
+//     } else {
+//       a.push(j);
+//     }
+//   }
+// }
+// console.log(a);
+
+// pattern printing----------(21-12-23)
+// r = 4;
+// for (i = 1; i <= r; i++) {
+//   s = "";
+//   for (j = r; j >= i; j--) {
+//     s += "*" + " ";
+//   }
+//   console.log(s);
+// }
+
+// o/p
+// * * * *
+// * * *
+// * *
+// *
+
+// r=4
+// a = 1;
+// for (i = 1; i <= r; i++) {
+//   s = "";
+//   for (j = 1; j <= i; j++) {
+//     s += a + " ";
+//     a++;
+//   }
+//   console.log(s);
+// }
+// o/p
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+
+// r = 4;
+// for (i = 1; i <= r; i++) {
+//   s = "";
+//   for (j = 1; j <= i; j++) {
+//     s += "*" + " ";
+//   }
+//   console.log(s);
+// }
+// o/p
+// *
+// * *
+// * * *
+// * * * *
+
+// let r = 4,
+//   a = 1;
+// for (let i = 1; i <= r; i++) {
+//   let s = "";
+//   for (let j = 1; j <= i; j++) {
+//     if (i % 2 == 0) {
+//       s = a + " " + s;
+//     } else {
+//       s += a + " ";
+//     }
+//     a++;
+//   }
+//   console.log(s);
+// }
+// o / p
+// 1
+// 3 2
+// 4 5 6
+// 10 9 8 7
+
+// middle values of the array
+// let a = [1, 2, 3, 5, 9, 8, 6];
+// n = a.length;
+// if (n % 2 == 0) {
+//   console.log(`${a[n / 2 - 1]} & ${a[n / 2]} are middle values`);
+// } else {
+//   console.log(`${a[Math.floor(n / 2)]} is middle value`);
+// }
+
+// let r = 4;
+// for (i = 1; i <= r; i++) {
+//   s = "";
+// for (let k = r - i; k > 0; k--) {
+//   s += " ";
+// }
+//   for (let j = 1; j <= i; j++) {
+//     s += "*" + " ";
+//   }
+//   console.log(s);
+// }
+// o/p
+//    *
+//   * *
+//  * * *
+// * * * *
+
+// let r = 4;
+// for (i = 1; i <= r; i++) {
+//   s = "";
+//   a = 1;
+
+//   for (let j = 1; j <= i; j++) {
+//     s += a;
+//     a++;
+//   }
+//   console.log(s);
+// }
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+
+// let n = prompt("enter no of persons");
+// let a = [];
+// for (i = 1; i <= n; i++) {
+//   let name = prompt(`Name`);
+//   let age = prompt(`Age`);
+//   a.push(name, age);
+// }
+// console.log(a);
+// let c = prompt("enter name");
+// for (i = 0; i < a.length; i++) {
+//   if (a[i] == c) {
+//     console.log(a[i + 1]);
+//   }
+// }
+
+// let num = 5;
+// while (true) {
+//   let n = prompt("enter num");
+//   if (num == n) break;
+// }
+
+// let r = 5;
+// let p = 4;
+// for (i = 1; i <= r; i++) {
+//     s = "";
+//     x = "";
+//     for (let k = r - i; k > 0; k--) {
+//         s += " " + " ";
+//     }
+//     for (j = 1; j <= i; j++) {
+//         x = j + " " + x;
+//         s = s + " " + j;
+//     }
+//   console.log(s+x);
+// }
+
+// let r = 5;
+
+// for (let i = 1; i <= r; i++) {
+//   let s = "";
+//   let x = "";
+//   for (let k = r - i; k > 0; k--) {
+//     s += "  ";
+//   }
+//   for (let j = 1; j <= i; j++) {
+//     x = j + " " + x;
+//     s = s + j + " ";
+//   }
+//   console.log(s + x);
+// }
+
+// let z = 4;
+// for (i = 1; i <= z; i++) {
+//   p = "";
+
+//   for (j = 1; j <= i; j++) {
+//     p = p + " " + j;
+//   }
+//   console.log(p);
+// }
+
+// for (i = 1; i <= 5; i++){
+//   let s = "";
+//   s = i + s;
+//   for (j = 1; j <= i; j++){
+//     s +=  "*";
+//   }console.log(s)
+// }
+
+// function otpGen(length) {
+//   let otp = "";
+//   for (let i = 0; i < length; i++){
+//     otp += Math.floor(Math.random() * 10).toString()
+//   }
+//   return otp;
+// }
+// console.log(otpGen(6));
+
+// function pushArr(a, n) {
+//   let ar = [];
+//   for (let i = 0; i < a.length - 2; i++) {
+//     for (let j = i + 1; j < a.length - 1; j++) {
+//       for (let k = j + 1; k < a.length; k++) {
+//         if (a[i] + a[j] + a[k] === n) {
+//           ar.push([a[i], a[j], a[k]]);
+//         }
+//       }
+//     }
+//   }
+//   return ar;
+// }
+// console.log(pushArr([4, 2, 5, 9, 12], 18));
+
+// let x = [53, 18, 12, 23];
+// let c1 = 0;
+// for (i of x) {
+//   let y = String(i);
+//   let c = 0;
+//   for (j = 0; j < y.length - 1; j++) {
+//     if (y[j] < y[j + 1]) {
+//       c++;
+//     }
+//   }
+//   if (c == y.length - 1) {
+//     c1++;
+//   }
+// }
+// console.log(c1);
+// o/p: count of ascending in array is 3
+
+// let r = 3;
+// for (let i = 1; i <= r; i++) {
+//     let s = "",
+//     a=1,
+//     c = 65;
+//   for (let k = r - i; k >= 0; k--) {
+//     s += " ";
+//   }
+//   for (let j = 1; j <= i * 2; j++) {
+//     if (j <= i) {
+//       s = s + String.fromCharCode(c);
+//     } else {
+//         s += a;
+//         a++;
+//     }
+//     c++;
+//   }
+//   console.log(s);
+// }
+
+//    a+
+//   ab++
+//  abc+++
+
+// let r = 4;
+// for (let i = 1; i <= r; i++){
+//     let s = "";
+//     for (let j = r; j >= 1; j--){
+//         s+=j
+//     }console.log(s)
+// }
+
+// let r = 6;
+// let ar=["@","#","$","%","^","&","*","(",")"]
+// for (i = 0; i <= r; i++){
+//     let s = ""
+//     for (j = 0; j <= r; j++){
+//         if (i == j) {
+//             s+=ar[i]
+//         } else {
+//             s+="*"
+//         }
+//     }console.log(s)
+// }
+
+// let r = 4;
+// for (let i = 1; i <= r; i++){
+//     let s = "", a = 0;
+//     for (let j = 1; j <= i+1; j++){
+//         if (j <= i) {
+//             s+="*"
+//         } else {
+//             s += a;
+
+//         }a++;
+//     }console.log(s);
+// }

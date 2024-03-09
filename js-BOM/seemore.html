@@ -1,72 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body{
-            background-image: url("https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2022-09/person-adding-clothes-cart-closeup-online-shopping-campaign_0.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
+      body {
+        background-image: url("https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2022-09/person-adding-clothes-cart-closeup-online-shopping-campaign_0.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      button {
+        padding: 0.5%;
+        width: 70px;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+      }
+      div {
+        margin-top: 1%;
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+        width: 80%;
+        /*text-align: center;*/
+        box-shadow: 0px 0px 7px 7px black;
+        display: flex;
+        padding: 3%;
+      }
+      #img {
+        border: 2px solid white;
+        border-radius: 5px;
+        margin-left: 25%;
+        width: 50%;
+      }
+      @media (max-width: 768px) {
+        div {
+          flex-direction: column;
         }
-        button{
-            padding: 0.5%;
-            width: 70px;
-            border-radius: 5px;
-            background-color: black;
-            color: white;
+
+        #img {
+          margin-top: 2%;
+          width: 50%;
         }
-        div{
-           margin-top: 1%;
-           border: 2px solid black;
-           background-color: black;
-           color: white;
-           width: 300px;
-           text-align: center;
-           box-shadow: 0px 0px 7px 7px black;
-        }
-        #img{
-            border: 2px solid white;
-            border-radius: 5px;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <button>Back</button>
     <div></div>
-</body>
-<script>  
-    let divget=document.getElementsByTagName("div");
-    let btn=document.getElementsByTagName("button");
+  </body>
+  <script>
+    let divget = document.getElementsByTagName("div");
+    let btn = document.getElementsByTagName("button");
     //console.log(btn);
-    btn[0].addEventListener("click",()=>{
-        window.history.back();
-    })
-    let val=JSON.parse(localStorage.getItem("seemore"));
+    btn[0].addEventListener("click", () => {
+      window.history.back();
+    });
+    let val = JSON.parse(localStorage.getItem("seemore"));
     console.log(val);
-    let span1get=document.createElement("span");
-    let img=document.createElement("img");
-    img.id="img";
-    img.style.width="150px";
-    img.style.paddingTop="3%"
-    img.setAttribute("src",val.image);
-    
+    let span1get = document.createElement("span");
+    let img = document.createElement("img");
+    img.id = "img";
+    //img.style.width = "150px";
+    img.style.paddingTop = "3%";
+    img.setAttribute("src", val.image);
 
-    let cate=document.createElement("h2");
-    cate.innerText="Category : "+ val.category;
+    let contentDiv = document.createElement("div");
+    contentDiv.style.display = "flex";
+    contentDiv.style.flexDirection = "column";
+    contentDiv.style.justifyContent = "center";
 
-    let desc=document.createElement("p");
-    desc.innerText="Description : "+ val.description;
+    let cate = document.createElement("h2");
+    cate.innerText = "Category : " + val.category;
 
-    let price=document.createElement("p");
-    price.innerText="Price : "+ val.price;
+    let title = document.createElement("h3");
+    title.innerText = "Title : " + val.title;
 
-    span1get.appendChild(img)
-    span1get.append(cate)
-    span1get.append(desc)
-    span1get.append(price)
-    divget[0].appendChild(span1get)
+    let desc = document.createElement("p");
+    desc.innerText = "Description : " + val.description;
 
-</script>
+    let price = document.createElement("p");
+    price.innerText = "Price : " + val.price;
+
+    let rate = document.createElement("h4");
+    rate.innerText = "Rating : " + val.rating.rate;
+
+    span1get.appendChild(img);
+    contentDiv.append(cate, title, desc, price, rate);
+    divget[0].appendChild(span1get);
+    divget[0].appendChild(contentDiv);
+  </script>
 </html>
