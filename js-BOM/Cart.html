@@ -33,6 +33,9 @@
         box-shadow: 0px 0px 4px 6px rgb(227, 224, 224);
         background-color: white;
       }
+      .boxstyle:hover {
+        transform: scale(1.02);
+      }
       #image {
         border: 2px solid rgb(9, 9, 9);
         border-radius: 10px;
@@ -53,9 +56,17 @@
         background-color: antiquewhite;
         border-radius: 10px;
       }
+      .back {
+        width: 100px;
+        background-color: black;
+        color: white;
+        padding: 0.5%;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
+    <button class="back">Back</button>
     <button id="clear">Clear</button>
     <div id="div"></div>
     <script>
@@ -333,6 +344,10 @@
         },
       ];
 
+      let btnBack = document.getElementsByTagName("button");
+      btnBack[0].addEventListener("click", () => {
+        window.history.back();
+      });
       let btn = document.getElementById("clear");
       btn.addEventListener("click", () => {
         window.localStorage.clear();
