@@ -66,7 +66,7 @@
     </style>
   </head>
   <body>
-    <div style="color:white">--MORE--</div>
+    <center><h1 style="color: white; margin: 0">--MORE--</h1></center>
     <button class="back">Back</button>
     <button id="clear">Clear</button>
     <div id="div"></div>
@@ -391,10 +391,10 @@
           let desc = document.createElement("p");
           desc.innerText = `Description : ${item.description}`;
 
-          let price = document.createElement("p");
+          let price = document.createElement("h3");
           price.innerText = `Price : $${item.price}`;
 
-          let quantity = document.createElement("p");
+          let quantity = document.createElement("h4");
           quantity.innerText = `Quantity : ${item.quantity}`;
 
           let btnbuy = document.createElement("button");
