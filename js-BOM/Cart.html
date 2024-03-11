@@ -11,11 +11,11 @@
         background-size: cover;
       }
       #clear {
+        width: 100px;
+        background-color: black;
+        color: white;
         padding: 0.5%;
-        width: 80px;
         border-radius: 5px;
-        background-color: rgb(225, 146, 133);
-        margin-bottom: 1%;
       }
       div {
         display: flex;
@@ -66,6 +66,7 @@
     </style>
   </head>
   <body>
+    <div style="color:white">--MORE--</div>
     <button class="back">Back</button>
     <button id="clear">Clear</button>
     <div id="div"></div>
@@ -351,6 +352,7 @@
       let btn = document.getElementById("clear");
       btn.addEventListener("click", () => {
         window.localStorage.clear();
+        window.location.reload();
       });
 
       let cartgetting = localStorage.getItem("cart");
@@ -360,64 +362,88 @@
         : (cartgetting = JSON.parse(cartgetting));
 
       let divget = document.getElementById("div");
+      const updateCart = () => {
+        divget.innerHTML = ""; // Clear the existing content
 
-      cartgetting.map((val, ind) => {
-        let divcreat = document.createElement("div");
-        divcreat.className = "boxstyle";
+        let cartItems = {};
 
-        let img = document.createElement("img");
-        img.setAttribute("src", val.image);
-        img.style.width = "100%";
-        img.style.height = "300px";
-        img.id = "image";
-
-        let id = document.createElement("p");
-        id.innerText = `Item-id : ${val.id}`;
-
-        let category = document.createElement("h3");
-        category.innerText = `Category : ${val.category}`;
-
-        let desc = document.createElement("p");
-        desc.innerText = `Description : ${val.description}`;
-
-        let price = document.createElement("p");
-        price.innerText = `Price : ${val.price}`;
-
-        let btnbuy = document.createElement("button");
-        btnbuy.innerText = "Buy Now";
-        btnbuy.style.padding = "10px";
-        btnbuy.style.marginRight = "5%";
-        btnbuy.style.width = "100px";
-        btnbuy.setAttribute("class", "btnBuy");
-
-        btnbuy.addEventListener("click", () => {
-          window.location.assign("./buy.html");
+        cartgetting.forEach((val) => {
+          if (!cartItems[val.id]) {
+            cartItems[val.id] = { ...val, quantity: 1 };
+          } else {
+            cartItems[val.id].quantity += 1;
+          }
         });
 
-        let btndel = document.createElement("button");
-        btndel.innerText = "Delete Item";
-        btndel.style.padding = "10px";
-        btndel.style.marginLeft = "5%";
-        btndel.style.width = "100px";
-        btndel.setAttribute("class", "btnDel");
+        Object.values(cartItems).forEach((item) => {
+          let divcreat = document.createElement("div");
+          divcreat.className = "boxstyle";
 
-        btndel.addEventListener("click", () => {
-          cartgetting.splice(ind, 1);
-          localStorage.setItem("cart", JSON.stringify(cartgetting));
-          alert("Your item is deleted...");
-          divget.removeChild(divcreat);
+          let img = document.createElement("img");
+          img.setAttribute("src", item.image);
+          img.style.width = "100%";
+          img.style.height = "300px";
+          img.id = "image";
+
+          let category = document.createElement("h3");
+          category.innerText = `Category : ${item.category}`;
+
+          let desc = document.createElement("p");
+          desc.innerText = `Description : ${item.description}`;
+
+          let price = document.createElement("p");
+          price.innerText = `Price : $${item.price}`;
+
+          let quantity = document.createElement("p");
+          quantity.innerText = `Quantity : ${item.quantity}`;
+
+          let btnbuy = document.createElement("button");
+          btnbuy.innerText = "Buy Now";
+          btnbuy.style.padding = "10px";
+          btnbuy.style.marginRight = "5%";
+          btnbuy.style.width = "100px";
+          btnbuy.setAttribute("class", "btnBuy");
+
+          btnbuy.addEventListener("click", () => {
+            window.location.assign("./buy.html");
+          });
+
+          let btndel = document.createElement("button");
+          btndel.innerText = "Delete Item";
+          btndel.style.padding = "10px";
+          btndel.style.marginLeft = "5%";
+          btndel.style.width = "100px";
+          btndel.setAttribute("class", "btnDel");
+
+          btndel.addEventListener("click", () => {
+            const itemIndex = cartgetting.findIndex(
+              (cartItem) => cartItem.id === item.id
+            );
+
+            if (itemIndex !== -1) {
+              if (cartgetting[itemIndex].quantity > 1) {
+                cartgetting[itemIndex].quantity -= 1;
+              } else {
+                cartgetting.splice(itemIndex, 1);
+              }
+
+              localStorage.setItem("cart", JSON.stringify(cartgetting));
+              alert("Your item is deleted...");
+              updateCart();
+            }
+          });
+
+          divcreat.appendChild(img);
+          divcreat.appendChild(category);
+          divcreat.appendChild(desc);
+          divcreat.appendChild(price);
+          divcreat.appendChild(quantity);
+          divcreat.appendChild(btnbuy);
+          divcreat.appendChild(btndel);
+          divget.appendChild(divcreat);
         });
-
-        divcreat.appendChild(img);
-        divcreat.appendChild(id);
-        divcreat.appendChild(category);
-        divcreat.appendChild(desc);
-        divcreat.appendChild(price);
-        divcreat.appendChild(btnbuy);
-        divcreat.appendChild(btndel);
-        divget.appendChild(divcreat);
-      });
-      // console.log(itemget)
+      };
+      updateCart();
     </script>
   </body>
 </html>

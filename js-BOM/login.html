@@ -40,7 +40,8 @@
       .lbel {
         margin-bottom: 5%;
       }
-      #login {
+      #login,
+      #sign-up {
         background-color: black;
         color: white;
         border-radius: 5px;
@@ -48,7 +49,8 @@
         width: 100%;
         font-size: 16px;
       }
-      #login:hover {
+      #login:hover,
+      #sign-up:hover {
         background-color: rgb(108, 105, 105);
       }
       input {
@@ -81,6 +83,8 @@
         /><br /><br />
         <button id="login">Login</button>
       </form>
+      <p style="color: black">If new user kindly Sign-Up</p>
+      <button id="sign-up">Sign Up</button>
       <script>
         let usernameget = document.getElementById("user");
         let passwordget = document.getElementById("pass");
@@ -108,6 +112,10 @@
             alert("credentials are invalid");
             form.reset();
           }
+        });
+        let signUpBtn = document.getElementById("sign-up");
+        signUpBtn.addEventListener("click", () => {
+          window.location.assign("./index.html");
         });
       </script>
     </div>
