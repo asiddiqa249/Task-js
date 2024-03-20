@@ -396,10 +396,10 @@
 //  Print Patter using loop.
 
 //   	1 2 3 4 5
-//      1 2 3 4
+//    1 2 3 4
 // 		1 2 3
 // 		1 2
-//      1
+//    1
 
 //  debugger
 // let row = 1;
@@ -1618,6 +1618,33 @@ console.log(b);
 // 3 2
 // 4 5 6
 // 10 9 8 7
+
+// let r = 4;
+// for (let i = 1; i <= r; i++) {
+//   let s = "";
+//   if (i % 2 == 0) {
+//     for (let j = i; j >= 1; j--) {
+//       s += j;
+//       if (j > 1) {
+//         s += "#";
+//       }
+//     }
+//   } else {
+//     for (let j = 1; j <= i; j++) {
+//       s += j;
+//       if (j < i) {
+//         s += "#";
+//       }
+//     }
+//   }
+//   console.log(s);
+// }
+
+// output
+// 1
+// 2#1
+// 1#2#3
+// 4#3#2#1
 
 // middle values of the array
 // let a = [1, 2, 3, 5, 9, 8, 6];
